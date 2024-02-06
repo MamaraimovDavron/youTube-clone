@@ -65,7 +65,10 @@ const Video = () => {
     <Box>
       <div className="video">
         <div className="video__top">
-          <img src="https://i.ytimg.com/vi/D9hoKyKV2oM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAswFigIMCAAQARhlIEcoWTAP&rs=AOn4CLDcbApIPlOp9Fdmc7cHj6naQBLmIA" />
+          <img
+            src="https://i.ytimg.com/vi/D9hoKyKV2oM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAswFigIMCAAQARhlIEcoWTAP&rs=AOn4CLDcbApIPlOp9Fdmc7cHj6naQBLmIA"
+            alt="img"
+          />
           <span>05:43</span>
         </div>
         <div className="video__title">
