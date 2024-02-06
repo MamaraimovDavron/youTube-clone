@@ -3,7 +3,12 @@ import React from "react";
 // import Sidebar from "./components/Sidebar/Sidebar";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import LoginScreen from "./screens/homeScreen/loginScreen/LoginScreen";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 
 function App() {
@@ -18,9 +23,7 @@ function App() {
               <HomeScreen />
             </Layout>
           }
-        >
-          {/* <HomeScreen /> */}
-        </Route>
+        ></Route>
 
         <Route path="/auth" element={<LoginScreen />}></Route>
 
@@ -32,6 +35,7 @@ function App() {
             </Layout>
           }
         ></Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
