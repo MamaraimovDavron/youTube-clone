@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 // import MiniVideo from "../../../components/video/MiniVideo";
 import Video from "../../../components/video/Video";
-import Comment from "../../../components/comments/Comment";
+// import Comment from "../../../components/comments/Comment";
 
 const Box = styled.div`
   display: flex;
