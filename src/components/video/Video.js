@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillEye } from "react-icons/ai";
+import ReactPlayer from "react-player/youtube";
+
+// import YouTube from "react-youtube";
+// import Link from "react-router-dom";
+// import ReactPlayer from "react-player";
 
 const Box = styled.div`
   .video {
     margin-bottom: 1rem;
-    padding: 0.7rem;
-
+    /* padding: 0.7rem; */
     font-weight: 500;
     font-size: 0.9rem;
-
+    position: relative;
     cursor: pointer;
+
+    .icon-1 {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      /* border: 1px solid; */
+      opacity: 0.1;
+      background-color: red;
+      /* z-index: -1; */
+      top: 0;
+      position: absolute;
+    }
+    .icon-2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      /* border: 1px solid; */
+      opacity: 0.1;
+      background-color: red;
+      z-index: -1;
+      top: 0;
+      position: absolute;
+    }
 
     &__top {
       margin-top: 0.5rem;
@@ -57,19 +84,44 @@ const Box = styled.div`
         margin-bottom: 0;
       }
     }
+
+    &__channel {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 `;
 
 const Video = () => {
+  const [state, setState] = useState(true);
+
   return (
     <Box>
       <div className="video">
         <div className="video__top">
-          <img
-            src="https://i.ytimg.com/vi/D9hoKyKV2oM/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAswFigIMCAAQARhlIEcoWTAP&rs=AOn4CLDcbApIPlOp9Fdmc7cHj6naQBLmIA"
-            alt="img"
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=sNqfQZI9WdU"
+            width="100%"
+            controls
           />
-          <span>05:43</span>
+          <div
+            className={state ? "icon-1" : "icon-2"}
+            onClick={() => {
+              setState(!state);
+            }}
+          ></div>
         </div>
         <div className="video__title">
           Create app in 5 minutes #made by Davron
@@ -78,7 +130,7 @@ const Video = () => {
           <span>
             <AiFillEye /> 5 m Views •
           </span>
-          <span>5 days ago</span>
+          <span> 5 days ago</span>
         </div>
         <div className="video__channel">
           <img
